@@ -1,17 +1,12 @@
-angular.module('starter.services', [])
+angular.module('starter.services')
 
 .service('Holiday', function () {
   
-  var isLoggedIn = false;
-  var data = {
-
-  };
+  var city = 'sdf';
 
   return {
-    isLoggedIn: function () { return loggedIn; },
-    logIn:      function (userData) { 
-      data = userData;
-    }
-  };
+    city:    function () { return city; },
+    setCity: function (theCity) { city = theCity; }
+  }
 
 });

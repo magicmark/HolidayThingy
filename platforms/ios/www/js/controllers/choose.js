@@ -1,23 +1,29 @@
 angular.module('starter.controllers')
 
-.controller('ChooseCtrl', function($scope) {
-  alert('s');
-  $scope.name = "ballsacks";
-  console.log("hello?");
+.controller('ChooseCtrl', function($scope, Holiday, PN) {
 
-  // PN.sub(function(m) {
-  //   alert("message is " + m);
+  //$scope.daddyState = "margin-top:0";
+
+  $scope.cities = [
+    { 'name': 'MANCHESTER' },
+    { 'name': 'WARSAW' },
+    { 'name': 'PARIS' },
+    { 'name': 'CRACOW' },
+    { 'name': 'LONDON' }
+  ];
+
+  $scope.selectCity = function (city) {
+    Holiday.setCity(city); 
+  };
+
+  $scope.goToBudget = function () {
+    alert('sdf');
+    //$scope.daddyState = "margin-top:-100%;"
+  };
+
+  // PN.sub(function (m) {
+  //   alert("sfkjshfkjsf " + m);
   // });
 
-  console.log("what's undefined?");
-  console.log('huh?');
-
-
-
-  // $scope.startBooking = function() {
-  //   $state.go('chooseCity');
-  // };
-
-  //$scope.startBooking = rightButtons;
 
 });
