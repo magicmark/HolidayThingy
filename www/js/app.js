@@ -8,8 +8,24 @@
 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform) {
+.config(function (ezfbProvider) {
+  ezfbProvider.setInitParams({
+    appId: '247567278783426',
+    nativeInterface: CDV.FB,
+    useCachedDialogs: false
+  });
+
+  ezfbProvider.setLoadSDKFunction(function ($document, ezfbAsyncInit) {
+    $document.on('deviceready', function () {
+      ezfbAsyncInit();
+    });
+  });
+})
+
+.run(function($ionicPlatform, ezfb) {
   $ionicPlatform.ready(function() {
+
+    ezfb.init();
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -21,16 +37,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-// .run(function($ionicPlatform) {
-//   $ionicPlatform.ready(function() {
-//     FastClick.attach(document.body);
-
-//     if(window.StatusBar) {
-//       // org.apache.cordova.statusbar required
-//       StatusBar.styleDefault();
-//     }
-//   });
-// })
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -39,12 +45,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-    // .state('sendCode', {
-    //   url: "/login",
-    //   templateUrl: "templates/sendCode.html",
-    //   controller: 'sendCodeCtrl'
-    // })
 
     .state('home', {
       url: "/home",
@@ -62,52 +62,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'ChooseCtrl'
     });
 
-
-
-    // // setup an abstract state for the tabs directive
-    // .state('tab', {
-    //   url: "/tab",
-    //   abstract: true,
-    //   templateUrl: "templates/tabs.html"
-    // })
-
-    // // Each tab has its own nav history stack:
-
-    // .state('tab.posts', {
-    //   url: '/posts',
-    //   views: {
-    //     'tab-posts': {
-    //       templateUrl: 'templates/tab-posts.html',
-    //       controller: 'PostsCtrl'
-    //     }
-    //   }
-    // })
-    // .state('tab.dash', {
-    //   url: '/dash',
-    //   views: {
-    //     'tab-dash': {
-    //       templateUrl: 'templates/tab-dash.html',
-    //       controller: 'DashCtrl'
-    //     }
-    //   }
-    // })
-
     // .state('tab.friend-detail', {
     //   url: '/friend/:friendId',
     //   views: {
     //     'tab-friends': {
     //       templateUrl: 'templates/friend-detail.html',
     //       controller: 'FriendDetailCtrl'
-    //     }
-    //   }
-    // })
-
-    // .state('tab.account', {
-    //   url: '/account',
-    //   views: {
-    //     'tab-account': {
-    //       templateUrl: 'templates/tab-account.html',
-    //       controller: 'AccountCtrl'
     //     }
     //   }
     // })
