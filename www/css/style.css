@@ -2,6 +2,8 @@
 
 html, body {
   height: 100%;
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: #fff;
 }
 
 .container {
@@ -19,7 +21,6 @@ html, body {
   background: #16a59b;
   line-height: 32.5px;
   padding-left: 25px;
-  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 15.8px;
@@ -51,12 +52,113 @@ html, body {
 }
 
 .city p {
-  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 35px;
   position: absolute;
   bottom: 8px;
   right: 6px;
   color: #fff;
   font-weight: 500;
+}
 
+/*
+//
+// ==================
+// Choose Date
+// ==================
+//
+*/
+
+.day {
+  height: 170px;
+  width: 100%;
+  background: #464949;
+  display: table;
+  text-align: center;
+}
+
+.dayContainer {
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dayContainer h1, h2 {
+  font-size: 100px;
+  color: #fff;
+  font-weight: normal!;
+}
+
+.dayContainer h2 {
+  font-size: 35px;
+}
+
+.month {
+  height: 47px;
+  background: #666666;
+  font-size: 21px;
+  line-height: 47px;
+  text-align: center;
+  display: table;
+  text-align: center;
+  width: 100%;
+}
+
+.monthChild {
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.days {
+  background: #16a59b;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  display: table;
+}
+
+.daysChild {
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dayPick {
+  height: 258px;
+  background: #333333;
+  color: #fff;
+  text-align: center;
+  margin-top: 15px; 
+}
+
+.col {
+  text-align: center;
+}
+
+.dayPick .col {
+  font-size: 15px;
+}
+
+.dayPick .row {
+  margin-top: -15px
+}
+
+.aday {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.selectFrom {
+  background: #666666;
+}
+
+.selected {
+  background: #16a59b;
 }
