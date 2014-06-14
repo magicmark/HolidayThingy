@@ -2,6 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('HomeCtrl', function($scope,$state,$http) {
 
+<<<<<<< HEAD
 	$scope.login = function () {
 		/**
 		 * Calling FB.login with required permissions specified
@@ -29,5 +30,13 @@ angular.module('starter.controllers', [])
     });
   }
 
+=======
+  // $scope.startBooking = function()
+  // {
+  //   $state.go('')
+  // }
+
+  // $scope.rightButtons = rightButtons;
+>>>>>>> 866937b304618e254cc2cbad4bad694a8216eb83
 
 });
