@@ -9,9 +9,9 @@
 angular.module('starter.controllers',[]);
 angular.module('starter.services', []);
 
-angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.services','ezfb'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,ezfb) {
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -24,7 +24,11 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
     }
   });
 
+  alert('lol');
+  ezfb.init();
+
 })
+
 // .run(function($ionicPlatform) {
 //   $ionicPlatform.ready(function() {
 //     FastClick.attach(document.body);
@@ -50,11 +54,12 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
     //   controller: 'sendCodeCtrl'
     // })
 
-    // .state('home', {
-    //   url: "/home",
-    //   templateUrl: "templates/home.html",
-    //   controller: 'HomeCtrl'
-    // })
+    .state('home', {
+      url: "/home",
+      templateUrl: "templates/home.html",
+      controller: 'HomeCtrl'
+    })
+
     .state('chooseCity', {
       url: "/book/city",
       templateUrl: "templates/choose.html",
@@ -73,6 +78,22 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/book/city');
+  $urlRouterProvider.otherwise('/home');
 
-});
+})
+.config(function (ezfbProvider) {
+  ezfbProvider.setInitParams({
+    appId: '247567278783426',
+    nativeInterface: CDV.FB,
+    useCachedDialogs: false
+  });
+
+  ezfbProvider.setLoadSDKFunction(function ($document, ezfbAsyncInit) {
+    $document.on('deviceready', function () {
+      ezfbAsyncInit();
+    });
+  });
+})
+.run(function(ezfb) {
+  ezfb.init();
+});;
