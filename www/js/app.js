@@ -34,6 +34,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
+  var pubnub = PUBNUB.init({
+    publish_key   : 'demo',
+    subscribe_key : 'demo'
+  })
+
+
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -113,6 +119,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/book/city');
 
 });

@@ -5,7 +5,7 @@ angular.module('starter.controllers', [])
   // if logged in ... 
 
   $scope.logIn = function(e) {
-    fb 
+    
   }
 
 });
