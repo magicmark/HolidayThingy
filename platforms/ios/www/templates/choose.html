@@ -1,6 +1,6 @@
 <div id="daddy">
 
-  <div class="container" id="cityPage" ng-show="true">
+  <div class="container" id="cityPage" ng-show="pageStates.city">
     <div class="topPad"></div>
     <div class="topBox">
       where do you want to go?
@@ -11,17 +11,17 @@
           ng-repeat="city in cities"
           ng-click="selectCity(city.name)"
           style="background: url(img/city.jpg) no-repeat top left">
-          <p>ff {{ city.name }}</p>
+          <p>{{ city.name }}</p>
         </div>
       </div>
       <div class="bottomBox" ng-click="goToBudget()">swipe up to set budget</div>
     </div>
   </div>
 
-  <div class="container" id="budgetPage" ng-show="false">
+  <div class="container" id="budgetPage" ng-show="pageStates.budget">
     <div class="topPad"></div>
     <div class="topBox">
-      where do you want to go?
+      how much do you want to spend?
     </div>
     <div>
       <div style="background:#333333;">
@@ -31,10 +31,10 @@
     </div>
   </div>
 
-  <div class="container" id="datePage" ng-show="false">
+  <div class="container" id="datePage" ng-show="pageStates.date">
     <div class="topPad"></div>
     <div class="topBox">
-      where do you want to go?
+      when do you want to go? 
     </div>
     <div>
       <div style="background:#333333;">

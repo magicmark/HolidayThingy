@@ -4,6 +4,19 @@ angular.module('starter.controllers')
 
   //$scope.daddyState = "margin-top:0";
 
+  $scope.pageStates = {
+    'city'   : true,
+    'budget' : false,
+    'date'   : false
+  };
+
+  var changePage = function (page) {
+    angular.forEach($scope.pageStates, function (value, key) {
+      $scope.pageStates[key] = false;
+    });
+    $scope.pageStates[page] = true;
+  }
+
   $scope.cities = [
     { 'name': 'MANCHESTER' },
     { 'name': 'WARSAW' },
@@ -17,8 +30,7 @@ angular.module('starter.controllers')
   };
 
   $scope.goToBudget = function () {
-    alert('sdf');
-    //$scope.daddyState = "margin-top:-100%;"
+    changePage('date');
   };
 
   // PN.sub(function (m) {

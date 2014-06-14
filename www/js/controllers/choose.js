@@ -11,7 +11,10 @@ angular.module('starter.controllers')
   };
 
   var changePage = function (page) {
-    for pages in $scope.pageStates
+    angular.forEach($scope.pageStates, function (value, key) {
+      $scope.pageStates[key] = false;
+    });
+    $scope.pageStates[page] = true;
   }
 
   $scope.cities = [
@@ -27,7 +30,7 @@ angular.module('starter.controllers')
   };
 
   $scope.goToBudget = function () {
-    //$scope.daddyState = "margin-top:-100%;"
+    changePage('date');
   };
 
   // PN.sub(function (m) {
