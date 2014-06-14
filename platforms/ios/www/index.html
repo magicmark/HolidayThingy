@@ -17,15 +17,25 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <script src="js/vendors/facebook/cdv-plugin-fb-connect.js"></script>
+    <script src="js/vendors/facebook/facebook-js-sdk.js"></script>
 
     <!-- your app's js -->
+    <script src="js/vendors/facebook/angular-easyfb.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/choose.js"></script>
+    <script src="js/controllers/home.js"></script>
     
     <!-- <script src="js/controllers.js"></script> -->
+    <script type="text/javascript">
+      if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Cordova variable does not exist. Check that you have included cordova.js correctly');
+      if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included cdv-plugin-fb-connect.js correctly');
+      if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
 
+    </script>
 
   </head>
   <body ng-app="starter">
