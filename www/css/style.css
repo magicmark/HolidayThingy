@@ -1,1 +1,62 @@
 /* Empty. Add your own CSS if you like */
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  max-height: 100%;
+}
+
+.topPad {
+  min-height: 21px;
+  background: #333333;
+  display: block;
+}
+
+.topBox, .bottomBox {
+  height: 32.5px;
+  background: #16a59b;
+  line-height: 32.5px;
+  padding-left: 25px;
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 15.8px;
+  color: #fff;
+  width: 100%;
+}
+
+
+.bottomBox {
+  height: 46px;
+  padding-left: none;
+  line-height: 46px;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+}
+
+
+#chooseCity {
+  max-height: 515px;
+  overflow-y: scroll;
+  padding-bottom: 46px;
+}
+
+.city {
+  height: 155px;
+  position: relative;
+}
+
+.city p {
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  position: absolute;
+  bottom: 8px;
+  right: 6px;
+  color: #fff;
+  font-weight: 500;
+
+}
