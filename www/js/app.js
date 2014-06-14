@@ -6,9 +6,13 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter.controllers',[]);
+angular.module('starter.services', []);
+
+angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
 
 .run(function($ionicPlatform) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,8 +23,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleDefault();
     }
   });
-})
 
+})
 // .run(function($ionicPlatform) {
 //   $ionicPlatform.ready(function() {
 //     FastClick.attach(document.body);
@@ -34,12 +38,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  var pubnub = PUBNUB.init({
-    publish_key   : 'demo',
-    subscribe_key : 'demo'
-  })
-
-
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -52,71 +50,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     //   controller: 'sendCodeCtrl'
     // })
 
-    .state('home', {
-      url: "/home",
-      templateUrl: "templates/home.html",
-      controller: 'HomeCtrl'
-    })
+    // .state('home', {
+    //   url: "/home",
+    //   templateUrl: "templates/home.html",
+    //   controller: 'HomeCtrl'
+    // })
     .state('chooseCity', {
       url: "/book/city",
       templateUrl: "templates/choose.html",
       controller: 'ChooseCtrl'
     })
-    .state('chooseBudget', {
-      url: "/book/budget",
-      templateUrl: "templates/choose.html",
-      controller: 'ChooseCtrl'
-    });
 
-
-
-    // // setup an abstract state for the tabs directive
-    // .state('tab', {
-    //   url: "/tab",
-    //   abstract: true,
-    //   templateUrl: "templates/tabs.html"
-    // })
-
-    // // Each tab has its own nav history stack:
-
-    // .state('tab.posts', {
-    //   url: '/posts',
-    //   views: {
-    //     'tab-posts': {
-    //       templateUrl: 'templates/tab-posts.html',
-    //       controller: 'PostsCtrl'
-    //     }
-    //   }
-    // })
-    // .state('tab.dash', {
-    //   url: '/dash',
-    //   views: {
-    //     'tab-dash': {
-    //       templateUrl: 'templates/tab-dash.html',
-    //       controller: 'DashCtrl'
-    //     }
-    //   }
-    // })
-
-    // .state('tab.friend-detail', {
-    //   url: '/friend/:friendId',
-    //   views: {
-    //     'tab-friends': {
-    //       templateUrl: 'templates/friend-detail.html',
-    //       controller: 'FriendDetailCtrl'
-    //     }
-    //   }
-    // })
-
-    // .state('tab.account', {
-    //   url: '/account',
-    //   views: {
-    //     'tab-account': {
-    //       templateUrl: 'templates/tab-account.html',
-    //       controller: 'AccountCtrl'
-    //     }
-    //   }
-    // })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/book/city');

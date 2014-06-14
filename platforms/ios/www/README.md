@@ -1,32 +1,92 @@
-This is an addon starter template for the [Ionic Framework](http://ionicframework.com/).
+// Ionic Starter App
 
-## How to use this template
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.services' is found in services.js
+// 'starter.controllers' is found in controllers.js
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-*This template does not work on its own*. It is missing the Ionic library, and AngularJS.
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    FastClick.attach(document.body);
 
-To use this, either create a new ionic project using the ionic node.js utility, or copy and paste this into an existing Cordova project and download a release of Ionic separately.
+    if(window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
 
-### With the Ionic tool:
+.config(function($stateProvider, $urlRouterProvider) {
 
-Take the name after `ionic-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
+    
+    // .state('sendCode', {
+    //   url: "/login",
+    //   templateUrl: "templates/sendCode.html",
+    //   controller: 'sendCodeCtrl'
+    // })
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myApp blank
-```
+    .state('login', {
+      url: "/login",
+      templateUrl: "templates/login.html",
+      controller: 'LoginCtrl'
+    })
 
-Then, to run it, cd into `myApp` and run:
+    // setup an abstract state for the tabs directive
+    .state('tab', {
+      url: "/tab",
+      abstract: true,
+      templateUrl: "templates/tabs.html"
+    })
 
-```bash
-$ ionic platform add ios
-$ ionic build ios
-$ ionic emulate ios
-```
+    // Each tab has its own nav history stack:
 
-Substitute ios for android if not on a Mac, but if you can, the ios development toolchain is a lot easier to work with until you need to do anything custom to Android.
+    .state('tab.posts', {
+      url: '/posts',
+      views: {
+        'tab-posts': {
+          templateUrl: 'templates/tab-posts.html',
+          controller: 'PostsCtrl'
+        }
+      }
+    })
+    .state('tab.dash', {
+      url: '/dash',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/tab-dash.html',
+          controller: 'DashCtrl'
+        }
+      }
+    })
 
-## Demo
-http://plnkr.co/edit/tpl:IUU30p?p=preview
+    .state('tab.friend-detail', {
+      url: '/friend/:friendId',
+      views: {
+        'tab-friends': {
+          templateUrl: 'templates/friend-detail.html',
+          controller: 'FriendDetailCtrl'
+        }
+      }
+    })
 
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/contribute/#issues) to the main Ionic repository. On the other hand, pull requests are welcome here!
+    .state('tab.account', {
+      url: '/account',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-account.html',
+          controller: 'AccountCtrl'
+        }
+      }
+    })
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/login');
+
+});
