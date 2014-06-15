@@ -6,15 +6,18 @@ angular.module('starter.services')
   var min = 0;
   var max = 0;
   var currency = '';
-
+  var hotel = '';
+  
   return {
-  	setRange: function (newMin,newMax,newCurrency) {
-  		min = newMin;
-  		max = newMax;
-  		currency = newCurrency;
-  	   },
     city:     function () { return city; },
-    setCity:  function (theCity) { city = theCity; }
-  }
+    hotel:    function () { return hotel; },
+    setCity:  function (theCity)  { city  = theCity; },
+    setHotel: function (theHotel) { hotel = theHotel },
+  	setRange: function (newMin,newMax,newCurrency) {
+		min = newMin;
+		max = newMax;
+		currency = newCurrency;
+   }
+  };
 
 });

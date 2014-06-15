@@ -73,6 +73,16 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
       templateUrl: "templates/chooseDates.html",
       controller: 'ChooseDatesCtrl'
     })
+    .state('bookHotel', {
+      url: "/book/hotel",
+      templateUrl: "templates/bookHotel.html",
+      controller: 'BookHotelCtrl'
+    })
+    .state('bookFlights', {
+      url: "/book/flights",
+      templateUrl: "templates/bookFlights.html",
+      controller: 'BookFlightsCtrl'
+    })
 
 
   // if none of the above states are matched, use this as the fallback
