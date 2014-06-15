@@ -65,9 +65,4 @@ angular.module('starter.controllers')
     $state.go('waiting');
   };
 
-  var startWait = function () {
-
-  };
-
-
 });
