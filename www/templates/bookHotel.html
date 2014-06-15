@@ -4,48 +4,19 @@
     where do you want to stay?
   </div>
   <div>
-
-    <div class="hotelContainer">
-
-      <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
-        <ion-slide>
-          <div class="hotel">
-            <div class="topDetails">
-              <p class="hearts">
-              <i class="icon ion-ios7-heart"></i>
-              <i class="icon ion-ios7-heart"></i>
-              <i class="icon ion-ios7-heart"></i> </p>
-              £500 per person
-            </div>
-            <p class="hotelname">Mark's BnB</p>
-          </div>
-          <div class="events">
-            <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
-          </div>
-        </ion-slide>
-        <ion-slide>
-          <div class="hotelInfo">
-            more stuff!
-          </div>
-        </ion-slide>
-      </ion-slide-box>
-
-    </div>
-
-    <div class="hotelContainer">
-
-      <div id="hotel1">
+<!-- 
+    <div class="hotelContainer" id="hc1" detect-gestures-hotel>
+      <div ng-repeat="(n, hotel) in hotels" ng-show="sliders['hc1'][n]">
         <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
           <ion-slide>
             <div class="hotel">
               <div class="topDetails">
                 <p class="hearts">
                 <i class="icon ion-ios7-heart"></i>
-                <i class="icon ion-ios7-heart"></i>
-                <i class="icon ion-ios7-heart"></i> </p>
-                £500 per person
+                </p>
+                £{{ hotel.price }} per person
               </div>
-              <p class="hotelname">Mark's BnB 2</p>
+              <p class="hotelname">{{ hotel.name }}</p>
             </div>
             <div class="events">
               <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
@@ -58,19 +29,20 @@
           </ion-slide>
         </ion-slide-box>
       </div>
+    </div>
 
-      <div id="hotel2">
+    <div class="hotelContainer" id="hc2" detect-gestures-hotel>
+      <div ng-repeat="(n, hotel) in hotels" ng-show="sliders['hc2'][n]">
         <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
           <ion-slide>
             <div class="hotel">
               <div class="topDetails">
                 <p class="hearts">
                 <i class="icon ion-ios7-heart"></i>
-                <i class="icon ion-ios7-heart"></i>
-                <i class="icon ion-ios7-heart"></i> </p>
-                £500 per person
+                </p>
+                £{{ hotel.price }} per person
               </div>
-              <p class="hotelname">Mark's BnB</p>
+              <p class="hotelname">{{ hotel.name }}</p>
             </div>
             <div class="events">
               <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
@@ -83,40 +55,36 @@
           </ion-slide>
         </ion-slide-box>
       </div>
-
-
     </div>
 
 
+ -->
 
 
-
-
-    <div class="hotelContainer">
-
-      <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
-        <ion-slide>
-          <div class="hotel">
-            <div class="topDetails">
-              <p class="hearts">
-              <i class="icon ion-ios7-heart"></i>
-              <i class="icon ion-ios7-heart"></i>
-              <i class="icon ion-ios7-heart"></i> </p>
-              £500 per person
+    <div class="hotelContainer" id="hc3" detect-gestures-hotel>
+      <div ng-repeat="(n, hotel) in hotels track by $index">
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" ng-show="sliders['hc3'][n+1]" show-pager="false">
+          <ion-slide>
+            <div class="hotel">
+              <div class="topDetails">
+                <p class="hearts">
+                <i class="icon ion-ios7-heart"></i>
+                </p>
+                £{{ hotel.price }} per person
+              </div>
+              <p class="hotelname">{{ hotel.name }}</p>
             </div>
-            <p class="hotelname">Mark's BnB</p>
-          </div>
-          <div class="events">
-            <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
-          </div>
-        </ion-slide>
-        <ion-slide>
-          <div class="hotelInfo">
-            more stuff!
-          </div>
-        </ion-slide>
-      </ion-slide-box>
-
+            <div class="events">
+              <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="hotelInfo">
+              more stuff!
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
     </div>
 
 
