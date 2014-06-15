@@ -4,28 +4,45 @@ angular.module('starter.controllers')
 	function($scope, $state) {
 		$scope.minValue = 1;
 		$scope.maxValue = 2;
-		$scope.currency = "BitCoins";
+		$scope.currency = "bitcoins";
+
+		var exchangeRate = 360;
+
+		/*
+		 * This is bullshit!
+		 */
+		 
+		$scope.$watch('currency',
+			function(oldValues,newValues){
+				if(newValues == 'pounds' 
+					&& oldValues == 'bitcoins')
+				{
+					$scope.minValue /= exchangeRate;
+				}
+				else if(newValues == 'bitcoins' 
+					&& oldValues == 'pounds')
+				{
+					$scope.minValue *= exchangeRate;
+				}
+		});
 
 }).directive('detectGestures', function($ionicGesture) {
   return {
     link : function(scope, elem, attrs) {
-
-      //var gestureType = attrs.gestureType;
-      //alert(gestureType);
       $ionicGesture.on('swiperight',
-            function(){alert("swipeRight!");}, elem);
+            function(){
+	            scope.currency = "pounds";
+	            scope.$apply();
+        }, elem);
+      
+      $ionicGesture.on('swipeleft',
+            function(){
+	            scope.currency = "bitcoins";
+	            scope.$apply();
+        }, elem);
 
-      /*
-      switch(gestureType) {
-        case 'swiperight':
-          
-          break;
-        case 'swipeleft':
-          $ionicGesture.on('swipeleft', 
-          	function(){alert("swipeRight!");}, elem);
-          break;
-      }
-      */
-  	}
+    },
+    template: '{{ currency }}'
+
    }
 });

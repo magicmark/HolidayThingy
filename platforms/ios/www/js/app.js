@@ -63,11 +63,11 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
       templateUrl: "templates/chooseCity.html",
       controller: 'ChooseCityCtrl'
     })
-    // .state('chooseBudget', {
-    //   url: "/book/budget",
-    //   templateUrl: "templates/choose.html",
-    //   controller: 'ChooseCtrl'
-    // })
+    .state('chooseBudget', {
+      url: "/book/budget",
+      templateUrl: "templates/chooseBudget.html",
+       controller: 'ChooseBudgetCtrl'
+    })
     .state('chooseDates', {
       url: "/book/dates",
       templateUrl: "templates/chooseDates.html",
@@ -76,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/book/budget');
 
 })
 .config(function (ezfbProvider) {
