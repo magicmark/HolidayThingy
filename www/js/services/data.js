@@ -1,6 +1,6 @@
 angular.module('starter.services')
 
-.service('User', function () {
+.service('Data', function () {
   
   var hotels  = null;
   var flights = null;
