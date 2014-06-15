@@ -7,20 +7,24 @@ angular.module('starter.services')
     subscribe_key : 'sub-c-9b23e232-f3b2-11e3-bffd-02ee2ddab7fe'
   });
 
-  // var action = function (m) {
-  //   alert(m);
-  // };
-
+  var publish = function (m) {
+    pubnub.publish({
+      channel : "hello_world",
+      message : m
+    });
+  };
+    
   pubnub.subscribe({
     channel : "hello_world",
-    message : function(m){ alert(m) }
+    message : function(m){
+      parts = m.split("|");
+      action({
+        'page':   parts[0],
+        'action': parts[1],
+        'val':    parts[2]
+      });
+    }
   });
-
-  // return {
-  //   sub: function (f) {
-  //     action = f;
-  //   }
-  // };
 
   var action = function (m) {
     alert(m);
@@ -29,6 +33,9 @@ angular.module('starter.services')
   return {
     sub: function (f) {
       action = f;
+    },
+    pub: function (d1, d2, d3) {
+      publish(d1+"|"+d2+"|"+d3);
     }
   }
 

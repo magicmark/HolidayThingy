@@ -11,6 +11,26 @@ angular.module('starter.controllers')
   //   $scope.pageStates[page] = true;
   // }
 
+  PN.sub(function (m) {
+    if (m.page == 'chooseCity') {
+      if (m.action == 'selectCity') selectCity(m.val);
+      if (m.action == 'goToBudget') {
+        if (Holiday.city() == '') selectCity(m.val);
+        goToBudget();
+      }
+    }
+  });
+
+  var selectCity = function (city) {
+    Holiday.setCity(city);
+    $scope.next = true;
+    $scope.$apply();
+  };
+
+  var goToBudget = function () {
+    $state.go('chooseDates');
+  }
+
   $scope.cities = [
     { 'name': 'MANCHESTER' },
     { 'name': 'WARSAW' },
@@ -19,13 +39,14 @@ angular.module('starter.controllers')
     { 'name': 'LONDON' }
   ];
 
-  $scope.selectCity = function (city) {
-    Holiday.setCity(city);
-    $scope.next = true;
+  $scope.btnSelectCity = function (city) {
+    PN.pub('chooseCity', 'selectCity', city);
+    selectCity(city);
   };
 
-  $scope.goToBudget = function () {
-    $state.go('chooseDates');
+  $scope.btnGoToBudget = function () {
+    PN.pub('chooseCity', 'goToBudget', Holiday.city());
+    goToBudget();
   };
 
 });

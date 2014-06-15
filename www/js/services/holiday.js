@@ -2,7 +2,7 @@ angular.module('starter.services')
 
 .service('Holiday', function () {
   
-  var city = 'sdf';
+  var city = '';
 
   return {
     city:    function () { return city; },

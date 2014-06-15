@@ -8,13 +8,13 @@
     <div id="chooseCity">
       <div class="city"
         ng-repeat="city in cities"
-        ng-click="selectCity(city.name)"
+        ng-click="btnSelectCity(city.name)"
         style="background: url(img/city.jpg) no-repeat top left">
         <p>{{ city.name }}</p>
       </div>
     </div>
 
-    <div class="bottomBox" ng-click="goToBudget()" ng-show="next">
+    <div class="bottomBox" ng-click="btnGoToBudget()" ng-show="next">
       swipe up to set budget
     </div>
 
