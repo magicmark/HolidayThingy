@@ -13,7 +13,7 @@ html, body {
   box-sizing:border-box;
   height: inherit;
   background-size: cover;
-
+  background: #383939;
 }
 
 .insidePadding
