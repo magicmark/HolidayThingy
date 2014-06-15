@@ -24,6 +24,7 @@ angular.module('starter.controllers')
   $scope.selectedCity = Holiday.city();
 
   var selectCity = function (city) {
+    $scope.selectedCity = city;
     Holiday.setCity(city);
     $scope.next = true;
     $scope.$apply();
@@ -34,11 +35,11 @@ angular.module('starter.controllers')
   }
 
   $scope.cities = [
-    { 'name': 'MANCHESTER' },
-    { 'name': 'WARSAW' },
-    { 'name': 'PARIS' },
-    { 'name': 'CRACOW' },
-    { 'name': 'LONDON' }
+    { 'name': 'MANCHESTER','file' : 'manchester.png' },
+    { 'name': 'WARSAW'    ,'file' : 'warsaw.png'},
+    { 'name': 'PARIS'     ,'file' : 'paris.png'},
+    { 'name': 'CRACOW'    ,'file' : 'krakow.png'},
+    { 'name': 'LONDON'    ,'file' : 'london.png'}
   ];
 
   $scope.btnSelectCity = function (city) {

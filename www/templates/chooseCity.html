@@ -7,11 +7,12 @@
   <div>
     <div class="scroller">
       <div class="city"
-        ng-class="{itemSelect: selectedCity == city.name" 
+       
         ng-repeat="city in cities"
         ng-click="btnSelectCity(city.name)"
-        style="background: url(img/city.jpg) no-repeat top left">
+        ng-class="{'active' : selectedCity == city.name}" >
         <p>{{ city.name }}</p>
+        <img src="img/cities/{{ city.file }}" width="320px" />
       </div>
     </div>
 

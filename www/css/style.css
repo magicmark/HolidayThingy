@@ -89,6 +89,7 @@ html, body {
   bottom: 8px;
   right: 6px;
   color: #fff;
+  z-index: 999;
   font-weight: 500;
 }
 
@@ -346,6 +347,19 @@ html, body {
   bottom: 4px;
   left: 6px;
   font-size: 25px;
+}
+
+#cityPage .city > img
+{
+   -webkit-filter: grayscale(100%); 
+   image-rendering: crisp-edges;
+   image-rendering: -webkit-optimize-contrast
+}
+
+#cityPage .city.active > img
+{
+  -webkit-transition: -webkit-filter 0.5s;
+  -webkit-filter: none; 
 }
 
 .hotel .topDetails {

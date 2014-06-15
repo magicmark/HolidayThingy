@@ -20,6 +20,7 @@
  @typedef FBProfilePictureCropping enum
 
  @abstract
+ 
  Type used to specify the cropping treatment of the profile picture.
 
  @discussion

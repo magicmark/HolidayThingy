@@ -89,6 +89,7 @@ html, body {
   bottom: 8px;
   right: 6px;
   color: #fff;
+  z-index: 999;
   font-weight: 500;
 }
 
@@ -348,6 +349,20 @@ html, body {
   font-size: 25px;
 }
 
+#cityPage .city > img
+{
+   -webkit-filter: grayscale(100%); 
+
+   image-rendering: crisp-edges;
+   image-rendering: -webkit-optimize-contrast
+}
+
+#cityPage .city.active > img
+{
+  -webkit-transition: -webkit-filter 0.5s;
+  -webkit-filter: none; 
+}
+
 .hotel .topDetails {
   width: 100%;
   position: absolute;
@@ -599,10 +614,7 @@ width: 100%;
 
 /*=======*/
 
-<<<<<<< HEAD
 
 .itemSelect {
   colour: #16a59b;
 }
-=======
->>>>>>> d07afb1628c16ee1c2ac9cd3ee9b5d03396a2e9a
