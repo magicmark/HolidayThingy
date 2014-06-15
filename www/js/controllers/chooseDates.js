@@ -37,9 +37,13 @@ angular.module('starter.controllers')
       for (i = $scope.from; i <= e; i++) {
         angular.element(document.querySelector('#d'+i)).addClass('selected');        
       }
-    $scope.next = true;
+      $scope.next = true;
     }
   };
+
+  $scope.sendData = function () {
+    $
+  }
 
 
 

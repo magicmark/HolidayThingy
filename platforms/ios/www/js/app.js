@@ -86,11 +86,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
 
 
   // if none of the above states are matched, use this as the fallback
-<<<<<<< HEAD
-  $urlRouterProvider.otherwise('/book/city');
-=======
   $urlRouterProvider.otherwise('/login');
->>>>>>> d07afb1628c16ee1c2ac9cd3ee9b5d03396a2e9a
+
 
 })
 .config(function (ezfbProvider) {
