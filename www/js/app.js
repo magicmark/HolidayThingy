@@ -9,7 +9,7 @@
 angular.module('starter.controllers',[]);
 angular.module('starter.services', []);
 
-angular.module('starter', ['ionic', 'starter.controllers','starter.services','ezfb'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.services','ezfb','rzModule'])
 
 .run(function($ionicPlatform,ezfb) {
 
@@ -76,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/book/budget');
+  $urlRouterProvider.otherwise('/login');
 
 })
 .config(function (ezfbProvider) {

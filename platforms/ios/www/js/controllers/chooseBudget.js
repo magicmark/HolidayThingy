@@ -1,34 +1,66 @@
 angular.module('starter.controllers')
 
 .controller('ChooseBudgetCtrl', 
-	function($scope, $state) {
+	function($scope, $state, $http,Holiday) {
 		$scope.minValue = 1;
 		$scope.maxValue = 2;
 		$scope.currency = "bitcoins";
 
-		var exchangeRate = 360;
+		var gbpToBtc = null;
+
+		$http.get('https://blockchain.info/tobtc?value=1&currency=GBP')
+		  .success(function(data)
+		  	{
+		  		gbpToBtc = data;
+		  	});
 
 		/*
 		 * This is bullshit!
 		 */
 
+		 $scope.priceSlider = {
+			    ceil: 7,
+			    floor: 1
+			};
+
+		$scope.chooseDate = function()
+		{
+			$state.go('chooseDates');
+		}
+
 		$scope.$watch('currency',
 			function(oldValues,newValues){
+				if(gbpToBtc === null || gbpToBtc === 'undefined')
+					return;
+
+				$scope.$broadcast('reCalcViewDimensions');
+
 				if(newValues == 'pounds' 
 					&& oldValues == 'bitcoins')
 				{
-					$scope.minValue /= exchangeRate;
-					$scope.maxValue /= exchangeRate;
+					$scope.minValue *= gbpToBtc;
+					$scope.maxValue *= gbpToBtc;
+	
+					$scope.priceSlider.floor *= gbpToBtc;
+					$scope.priceSlider.ceil *= gbpToBtc;
+
 				}
 				else if(newValues == 'bitcoins' 
 					&& oldValues == 'pounds')
 				{
-					$scope.minValue *= exchangeRate;
-					$scope.maxValue *= exchangeRate;
+					$scope.maxValue /= gbpToBtc;
+					$scope.minValue /= gbpToBtc;
+
+					$scope.priceSlider.floor /= gbpToBtc;
+					$scope.priceSlider.ceil  /= gbpToBtc;
+
 				}
+				Holiday.setRange($scope.minValue,
+					$scope.maxValue,newValues);
+
 		});
 
-}).directive('detectGestures', function($ionicGesture) {
+}).directive('detectGesturesBudget', function($ionicGesture) {
   return {
     link : function(scope, elem, attrs) {
       $ionicGesture.on('swiperight',
@@ -43,8 +75,7 @@ angular.module('starter.controllers')
 	            scope.$apply();
         }, elem);
 
-    },
-    template: '{{ currency }}'
+    }
 
    }
 });

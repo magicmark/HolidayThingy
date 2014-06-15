@@ -2,8 +2,18 @@
   <div class="topBox">
      how much do you want to spend?
   </div>
-  <div id="currentCurrency" style="width:100%;height:60px;" 
-       detect-gestures>
+  <div id="currentCurrency"
+       detect-gestures-budget>
+    <img id="leftArrowCurrency" 
+			   width="9" 
+         src="img/arrowL.png"/>
+		<span>
+	    {{ currency }}
+		</span>
+    <img  id="rightArrowCurrency"
+          src="img/arrowR.png"
+          width="9" />
+
   </div>  
 	<div id="minValueWrapper" 
 	     class="valuesWrapper">
@@ -11,28 +21,38 @@
 			from
 		</span>
 	  <span class="value">
-		 {{ minValue }}
+		 {{ minValue | number : 2 }}
 	  </span>
 	  <span>
 			{{ currency }}
 	  </span>
 	</div>
 	<div id="valueSliderWrapper">
-		
+
+	<rzslider
+    rz-slider-floor="priceSlider.floor"
+    rz-slider-ceil="priceSlider.ceil"
+    rz-slider-model="minValue"
+    rz-slider-high="maxValue">
+  </rzslider>
+
 	</div>
 	<div id="maxValueWrapper"
 			 class="valuesWrapper">
 	  <span>
-			from
+			to
 		</span>
 	  <span class="value">
-		 {{ maxValue }}
+		 {{ maxValue | number : 2 }}
 	  </span>
 	  <span>
 			{{ currency }}
 	  </span>
 	</div>
-  <div class="bottomBox">
-	  swipe up to selectDate
+  <div class="bottomBox" ng-click='chooseDate()'>
+	  swipe up to select date
   </div>
 </div>
+
+
+
