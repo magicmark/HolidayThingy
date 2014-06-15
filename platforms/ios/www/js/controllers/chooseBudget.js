@@ -10,7 +10,7 @@ angular.module('starter.controllers')
 
     PN.sub(function (m) {
       if (m.page == 'chooseBudget') {
-        if (m.action == 'moveMin')    alert(m.val);
+        if (m.action == 'moveMin')    setMin(m.val);
         if (m.action == 'moveMax')    setMax(m.val);
         if (m.action == 'changeCurr') setCurr(m.val);
         if (m.action == 'goToDates') {
