@@ -60,18 +60,18 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
     })
     .state('chooseCity', {
       url: "/book/city",
-      templateUrl: "templates/choose.html",
-      controller: 'ChooseCtrl'
+      templateUrl: "templates/chooseCity.html",
+      controller: 'ChooseCityCtrl'
     })
-    .state('chooseBudget', {
-      url: "/book/budget",
-      templateUrl: "templates/choose.html",
-      controller: 'ChooseCtrl'
-    })
+    // .state('chooseBudget', {
+    //   url: "/book/budget",
+    //   templateUrl: "templates/choose.html",
+    //   controller: 'ChooseCtrl'
+    // })
     .state('chooseDates', {
       url: "/book/dates",
-      templateUrl: "templates/choose.html",
-      controller: 'ChooseCtrl'
+      templateUrl: "templates/chooseDates.html",
+      controller: 'ChooseDatesCtrl'
     })
 
 
