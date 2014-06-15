@@ -34,12 +34,12 @@
         <div class="col" ng-repeat="day in days[k] track by $index">
           <div 
             class="aday"
-            id="d{{day}}" ng-click="clickDay(day)">{{ day }}</div>
+            id="d{{day}}" ng-click="btnClickDay(day)">{{ day }}</div>
         </div>
       </div>
     </div>
 
-    <div class="bottomBox" ng-show="next" ng-click="sendData()">swipe up to create package</div>
+    <div class="bottomBox" ng-show="next" ng-click="btnStartWait()">swipe up to create package</div>
 
 
   </div>

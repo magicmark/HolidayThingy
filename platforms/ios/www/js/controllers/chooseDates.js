@@ -1,6 +1,14 @@
 angular.module('starter.controllers')
 
-.controller('ChooseDatesCtrl', function($scope, Holiday, PN, $state) {
+.controller('ChooseDatesCtrl', function($scope, Holiday, PN, $state, Data) {
+
+  PN.sub(function (m) {
+    if (m.page == 'chooseDates') {
+      if (m.action == 'selectDate') clickDay(m.val);
+      if (m.action == 'goToWait') startWait();
+    }
+  });
+
 
   $scope.next = false;
 
@@ -29,7 +37,13 @@ angular.module('starter.controllers')
 
   $scope.from = 0;
 
-  $scope.clickDay = function(e) {
+  $scope.btnClickDay = function(e) {
+    PN.pub('chooseDates', 'selectDate', e);  
+    clickDay(e);
+  };
+
+  var clickDay = function(e) {
+    if ($scope.from == e) return;
     if ($scope.from == 0) {
       angular.element(document.querySelector('#d'+e)).addClass('selectFrom');
       $scope.from = e;
@@ -37,10 +51,20 @@ angular.module('starter.controllers')
       for (i = $scope.from; i <= e; i++) {
         angular.element(document.querySelector('#d'+i)).addClass('selected');        
       }
-    $scope.next = true;
+      $scope.next = true;
+      $scope.$apply();
     }
   };
 
+  $scope.btnStartWait = function () {
+    alert('going to download');
+    PN.pub('chooseDates', 'goToWait', '');     
+    $state.go('downloading');
+  };
+
+  var startWait = function () {
+    $state.go('waiting');
+  };
 
 
 });
