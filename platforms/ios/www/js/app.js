@@ -88,11 +88,12 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
       templateUrl: "templates/waiting.html",
       controller: 'WaitCtrl'
     })
+
     .state('downloading', {
       url: "/downloading",
       templateUrl: "templates/waiting.html",
       controller: 'WaitCtrl'
-    })
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/book/dates');

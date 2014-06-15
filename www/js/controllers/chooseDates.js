@@ -22,7 +22,7 @@ angular.module('starter.controllers')
         else if (i == 0) obj[i].push((j < n) ? ' ' : ++k);
         else obj[i].push(++k);
       }
-    } 
+    }
     return obj;
   };
 
@@ -38,7 +38,7 @@ angular.module('starter.controllers')
   $scope.from = 0;
 
   $scope.btnClickDay = function(e) {
-    PN.pub('chooseDates', 'selectDate', e);  
+    PN.pub('chooseDates', 'selectDate', e);
     clickDay(e);
   };
 
@@ -49,7 +49,7 @@ angular.module('starter.controllers')
       $scope.from = e;
     } else {
       for (i = $scope.from; i <= e; i++) {
-        angular.element(document.querySelector('#d'+i)).addClass('selected');        
+        angular.element(document.querySelector('#d'+i)).addClass('selected');
       }
       $scope.next = true;
       $scope.$apply();
@@ -57,13 +57,16 @@ angular.module('starter.controllers')
   };
 
   $scope.btnStartWait = function () {
-    alert('going to download');
     PN.pub('chooseDates', 'goToWait', '');     
     $state.go('downloading');
   };
 
   var startWait = function () {
     $state.go('waiting');
+  };
+
+  var startWait = function () {
+
   };
 
 
