@@ -60,46 +60,6 @@ angular.module('starter.controllers')
             "category": "Music"
         }]
     }, {
-        "name": "Me London",
-        "location": "336-337 The Strand, WC2R 1HA, London",
-        "pricePerNight": "218",
-        "website": "http:\/\/www.melia.com\/de\/hotels\/grossbritannien\/london\/me-london\/index.html",
-        "ameneties": "Bar\/Lounge",
-        "numRooms": "141",
-        "rating": "5",
-        "image": "http:\/\/imgec.trivago.com\/partnerimages\/80\/35\/80358922_x.jpeg",
-        "events": [{
-            "name": "Beatnik Events Presents...June 15th Sunday Social",
-            "id": "11650538073",
-            "url": "http:\/\/www.eventbrite.co.uk\/e\/beatnik-events-presentsjune-15th-sunday-social-tickets-11650538073?aff=ebapi",
-            "img": "http:\/\/ebmedia.eventbrite.com\/s3-build\/images\/6251617\/85448162281\/1\/logo.jpg",
-            "category": "Music"
-        }, {
-            "name": "French Musette Social Dance - Bal Musette \u00e0 La Guinguette aux Moineaux",
-            "id": "11265949759",
-            "url": "http:\/\/www.eventbrite.co.uk\/e\/french-musette-social-dance-bal-musette-a-la-guinguette-aux-moineaux-tickets-11265949759?aff=ebapi",
-            "img": "http:\/\/ebmedia.eventbrite.com\/s3-build\/images\/5996169\/34392725550\/1\/logo.jpg",
-            "category": "Music"
-        }, {
-            "name": "Mr Bojangles - New Orleans Blues Sunday 15 June - 15\/06\/2014",
-            "id": "11358963967",
-            "url": "http:\/\/www.eventbrite.co.uk\/e\/mr-bojangles-new-orleans-blues-sunday-15-june-15062014-tickets-11358963967?aff=ebapi",
-            "img": "http:\/\/ebmedia.eventbrite.com\/s3-build\/images\/5853687\/95812796383\/1\/logo.JPG",
-            "category": "Music"
-        }, {
-            "name": "BPSE Prizewinner Lunchtime Recital",
-            "id": "11929253719",
-            "url": "http:\/\/www.eventbrite.com\/e\/bpse-prizewinner-lunchtime-recital-tickets-11929253719?aff=ebapi",
-            "img": "http:\/\/ebmedia.eventbrite.com\/s3-build\/images\/6585193\/94697310259\/1\/logo.jpg",
-            "category": "Music"
-        }, {
-            "name": "Fulvio Sigurta & The Jason Lyon Trio Monday 16 June - 16\/06\/2014",
-            "id": "11358342107",
-            "url": "http:\/\/www.eventbrite.co.uk\/e\/fulvio-sigurta-the-jason-lyon-trio-monday-16-june-16062014-tickets-11358342107?aff=ebapi",
-            "img": "http:\/\/ebmedia.eventbrite.com\/s3-build\/images\/5852813\/95812796383\/1\/logo.jpg",
-            "category": "Music"
-        }]
-    }, {
         "name": "Crown Moran",
         "location": "142-152 Cricklewood, NW2 3ED, London",
         "pricePerNight": "78",

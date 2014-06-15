@@ -93,7 +93,20 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
       url: "/downloading",
       templateUrl: "templates/waiting.html",
       controller: 'WaitCtrl'
+    })
+    .state('payment', {
+      url: "/payment",
+      templateUrl: "templates/choosePayment.html",
+      controller: 'PaymentCtrl'
     });
+    /*
+    .state('paymentBitcoin', {
+      url: "/payment/bitcoin",
+      templateUrl: "templates/payBitcoin.html",
+      controller: 'payment'
+    });
+    */
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');

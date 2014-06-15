@@ -9,6 +9,7 @@
       <div class="flight"
         ng-repeat="(n, flight) in flights"
         ng-click="btnSelectFlight(n)"
+        ng-class="{'active' : selectedFlightIndex == n}"
         style="background: #333 no-repeat top left">
 
         <div class="flightList">
@@ -29,7 +30,7 @@
       </div>
     </div>
 
-    <div class="bottomBox" ng-click="btnGoToFinish()" ng-show="next">
+    <div class="bottomBox" ng-click="goToPayment()" ng-show="next">
       swipe up to complete planning
     </div>
 

@@ -45,6 +45,20 @@ angular.module('starter.controllers')
     }
   ];
 
+
+
+  $scope.btnSelectFlight = function(n)
+  {
+    $scope.selectedFlightIndex = n;
+    $scope.next = true;
+  }
+
+
+  $scope.goToPayment = function()
+  {
+    $state.go('payment');
+  }
+
   // PN.sub(function (m) {
   //   if (m.page == 'chooseHotel') {
   //     if (m.action == 'selectHotel') selectHotel(m.val);

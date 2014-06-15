@@ -27,7 +27,7 @@ angular.module('starter.services')
   });
 
   var action = function (m) {
-    alert(m);
+    //alert(m);
   };
 
   return {

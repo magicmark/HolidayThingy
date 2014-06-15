@@ -641,3 +641,8 @@ div.pictureOverlayer{
   display: table;
   clear: both;
 }
+
+.flight.active
+{
+  background: #009999 !important;
+}
