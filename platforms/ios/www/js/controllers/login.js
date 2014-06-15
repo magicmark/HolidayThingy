@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-.controller('LoginCtrl', function($scope,$state,$http,ezfb) {
+.controller('LoginCtrl', function($scope,$state,$http,ezfb, User) {
 
 
 	$scope.alertAdada = function()
@@ -20,7 +20,7 @@ angular.module('starter.controllers')
        * no manual $scope.$apply, I got that handled
        */
       if (res.authResponse) {
-        updateLoginStatus(updateApiMe);
+        updateLoginStatus();
       }
     }, {scope: 'email,user_likes'});
   };
@@ -28,10 +28,11 @@ angular.module('starter.controllers')
   /**
    * Update loginStatus result
    */
-  function updateLoginStatus (more) {
+  function updateLoginStatus () {
     ezfb.getLoginStatus(function (res) {
       if (res.status === 'connected')
       {
+        updateApiMe();
         $state.go('home')
       } else if (res.status === 'not_authorized') {
         alert('BIJACZ WHY NOT');
@@ -50,8 +51,7 @@ angular.module('starter.controllers')
    */
   function updateApiMe () {
     ezfb.api('/me', function (res) {
-      $scope.apiMe = res;
-      console.log(res);
+      User.logIn(res);
     });
   }
 
