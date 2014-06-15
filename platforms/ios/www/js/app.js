@@ -96,7 +96,11 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
     });
 
   // if none of the above states are matched, use this as the fallback
+<<<<<<< HEAD
+  $urlRouterProvider.otherwise('/book/hotel');
+=======
   $urlRouterProvider.otherwise('/login');
+>>>>>>> 9998a38c44bae4b4891c9094cea07ccdb37ecdae
 
 
 })
