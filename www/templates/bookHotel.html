@@ -63,7 +63,7 @@
 
     <div class="hotelContainer" id="hc3" detect-gestures-hotel>
       <div ng-repeat="(n, hotel) in hotels">
-        <div ng-class="{hide: !sliders['hc3'][n+1] }" ng-click="btnSelectHotel({{n+1}})">
+        <div ng-class="{hide: sliders.hc3.curr != n+1}" ng-click="btnSelectHotel({{n+1}})">
           <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
             <ion-slide>
               <div class="hotel">
@@ -92,7 +92,7 @@
 
 
   </div>
-  <div class="bottomBox" ng-show="next">swipe up to select flights</div>
+  <div class="bottomBox" ng-show="next"  ng-click="btnGoToFlights()">swipe up to select flights</div>
 
 
   </div>

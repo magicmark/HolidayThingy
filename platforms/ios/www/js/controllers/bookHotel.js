@@ -62,7 +62,9 @@ angular.module('starter.controllers')
   };
 
   var goToFlights = function () {
-    $state.go('chooseFlights');
+    alert('going');
+    $state.go('bookFlights');
+    alert('jj');
   }
 
   $scope.btnSelectHotel = function (n) {
@@ -70,7 +72,7 @@ angular.module('starter.controllers')
     selectHotel(n);
   };
 
-  $scope.btnGoToBudget = function () {
+  $scope.btnGoToFlights = function () {
     PN.pub('chooseHotel', 'goToFlights', Holiday.hotel());
     goToFlights();
   };
