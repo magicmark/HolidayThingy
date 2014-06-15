@@ -83,10 +83,15 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
       templateUrl: "templates/bookFlights.html",
       controller: 'BookFlightsCtrl'
     })
+    .state('bookFlights', {
+      url: "/waiting",
+      templateUrl: "templates/waiting.html",
+      controller: 'WaitCtrl'
+    })
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/book/city');
+  $urlRouterProvider.otherwise('/login');
 
 
 })
