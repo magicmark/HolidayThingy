@@ -30,7 +30,7 @@ angular.module('starter.controllers')
   };
 
   var goToBudget = function () {
-    $state.go('chooseDates');
+    $state.go('chooseBudget');
   }
 
   $scope.cities = [
