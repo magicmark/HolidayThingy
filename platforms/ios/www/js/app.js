@@ -23,8 +23,6 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
       StatusBar.styleDefault();
     }
   });
-
-  alert('lol');
   ezfb.init();
 
 })
@@ -47,19 +45,19 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-    // .state('sendCode', {
-    //   url: "/login",
-    //   templateUrl: "templates/sendCode.html",
-    //   controller: 'sendCodeCtrl'
-    // })
-
+    //if user is not logged in it takes
+    //him or her to the login screen
+    .state('login', {
+      url: "/login",
+      templateUrl: "templates/login.html",
+      controller: 'LoginCtrl'
+    })
+    //home for logged users
     .state('home', {
       url: "/home",
       templateUrl: "templates/home.html",
       controller: 'HomeCtrl'
     })
-
     .state('chooseCity', {
       url: "/book/city",
       templateUrl: "templates/choose.html",
@@ -78,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ez
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/login');
 
 })
 .config(function (ezfbProvider) {

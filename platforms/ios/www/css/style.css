@@ -1,11 +1,28 @@
 /* Empty. Add your own CSS if you like */
 
 html, body {
-  height: 100%;
+  width:320px;
+  height:568px;
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+.page
+{
+  padding-top: 21px;
+  box-sizing:border-box;
+  height: inherit;
+  background-size: cover;
+
+}
+
+.insidePadding
+{
+  padding: 0px 25px;
+}
 .container {
-  max-height: 100%;
+  width:320px;
+  height:568px;
+  overflow: hidden;
 }
 
 .topPad {
@@ -19,7 +36,6 @@ html, body {
   background: #16a59b;
   line-height: 32.5px;
   padding-left: 25px;
-  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 15.8px;
@@ -38,6 +54,17 @@ html, body {
   bottom: 0px;
 }
 
+.barTitle
+{
+  height: 32px;
+  font-size: 16px;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 0px 10px;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+
 
 #chooseCity {
   max-height: 515px;
@@ -51,7 +78,6 @@ html, body {
 }
 
 .city p {
-  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 35px;
   position: absolute;
   bottom: 8px;
@@ -59,4 +85,126 @@ html, body {
   color: #fff;
   font-weight: 500;
 
+}
+
+/**
+ * JoinPage styles
+ */
+ #homePage,
+ #joinPage
+ {
+  background: 
+    url('backgrounds/join.png') 50%
+     top no-repeat;
+  background-size: 100%; 
+ }
+ 
+ #homePage .barTitle
+ {
+  background: #16a59b;
+ }
+
+ #joinPage .barTitle
+ {
+  background: #2c6599;
+ }
+
+ #logo
+ {width: 160px;}
+
+ #logoWrapper
+ {padding-top: 50px;margin-bottom: 50px;}
+ 
+ #logoWrapper > div 
+ {float:left;}
+ #logoWrapper:after
+ {
+  content: ' ';
+  display: table;
+  clear: both;
+ }
+
+ #name > h5,#name > h6, #name > h4
+ {
+  color: #FFF;
+  text-transform: uppercase;
+ }
+
+ #id>h4
+ {
+  color: #2c6599;
+ }
+
+ #loginWithFacebook
+ {
+  width: 320px;
+ }
+
+ #logIn
+ {
+  background: url('backgrounds/joinButton.png') no-repeat scroll 50% top / 100% auto transparent;
+  text-indent: -99999px;
+  display: block;
+  height: 211px;
+  width: 169px;
+  border: medium none;
+  margin: 0px auto;
+  margin-top: 40px;
+ }
+
+
+ /*
+  * Homepage kurwy
+  */
+#menuWrapper
+{
+  position: relative;
+  left: 120px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  top : 60px;
+}
+
+#menuWrapper > div { float:left;}
+#menuWrapper > .colSmall { width: 35px;}
+#menuWrapper > .colBig { width: 220px;}
+#menuWrapper  button
+{
+  display: block;
+  background: #2f3131;
+  color: #FFF;
+  width: 60px;
+  height: 60px;
+  border: none;
+}
+
+#menuWrapper button > p
+{
+  text-transform: uppercase;
+  font-size: 11px;
+  position: relative;
+  top: 5px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#menuWrapper #bookHoliday 
+{
+  background: #35a099;
+  width: 120px;
+  height: 120px;
+}
+
+#menuWrapper #infoApp{
+  width: 35px;
+  height: 35px;
+  position: relative;
+  top: 145px;
+}
+
+#menuWrapper #booking
+{
+  position: relative;
+  left: 60px;
 }
