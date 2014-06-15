@@ -4,94 +4,96 @@
     where do you want to stay?
   </div>
   <div>
-<!-- 
     <div class="hotelContainer" id="hc1" detect-gestures-hotel>
-      <div ng-repeat="(n, hotel) in hotels" ng-show="sliders['hc1'][n]">
-        <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
-          <ion-slide>
-            <div class="hotel">
-              <div class="topDetails">
-                <p class="hearts">
-                <i class="icon ion-ios7-heart"></i>
-                </p>
-                £{{ hotel.price }} per person
+      <div ng-repeat="(n, hotel) in hotels">
+        <div ng-class="{hide: !sliders['hc1'][n+1] }" ng-click="btnSelectHotel({{n+1}})">
+          <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+            <ion-slide>
+              <div class="hotel">
+                <div class="topDetails">
+                  <p class="hearts">
+                  <i class="icon ion-ios7-heart"></i>
+                  </p>
+                  £{{ hotel.price }} per person
+                </div>
+                <p class="hotelname">{{ hotel.name }}</p>
               </div>
-              <p class="hotelname">{{ hotel.name }}</p>
-            </div>
-            <div class="events">
-              <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div class="hotelInfo">
-              more stuff!
-            </div>
-          </ion-slide>
-        </ion-slide-box>
+              <div class="events">
+                <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="hotelInfo">
+                more stuff!
+              </div>
+            </ion-slide>
+          </ion-slide-box>
+        </div>
       </div>
     </div>
 
     <div class="hotelContainer" id="hc2" detect-gestures-hotel>
-      <div ng-repeat="(n, hotel) in hotels" ng-show="sliders['hc2'][n]">
-        <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
-          <ion-slide>
-            <div class="hotel">
-              <div class="topDetails">
-                <p class="hearts">
-                <i class="icon ion-ios7-heart"></i>
-                </p>
-                £{{ hotel.price }} per person
+      <div ng-repeat="(n, hotel) in hotels">
+        <div ng-class="{hide: !sliders['hc2'][n+1] }" ng-click="btnSelectHotel({{n+1}})">
+          <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+            <ion-slide>
+              <div class="hotel">
+                <div class="topDetails">
+                  <p class="hearts">
+                  <i class="icon ion-ios7-heart"></i>
+                  </p>
+                  £{{ hotel.price }} per person
+                </div>
+                <p class="hotelname">{{ hotel.name }}</p>
               </div>
-              <p class="hotelname">{{ hotel.name }}</p>
-            </div>
-            <div class="events">
-              <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div class="hotelInfo">
-              more stuff!
-            </div>
-          </ion-slide>
-        </ion-slide-box>
+              <div class="events">
+                <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="hotelInfo">
+                more stuff!
+              </div>
+            </ion-slide>
+          </ion-slide-box>
+        </div>
       </div>
     </div>
 
 
- -->
-
-
     <div class="hotelContainer" id="hc3" detect-gestures-hotel>
-      <div ng-repeat="(n, hotel) in hotels track by $index">
-        <ion-slide-box on-slide-changed="slideHasChanged($index)" ng-show="sliders['hc3'][n+1]" show-pager="false">
-          <ion-slide>
-            <div class="hotel">
-              <div class="topDetails">
-                <p class="hearts">
-                <i class="icon ion-ios7-heart"></i>
-                </p>
-                £{{ hotel.price }} per person
+      <div ng-repeat="(n, hotel) in hotels">
+        <div ng-class="{hide: !sliders['hc3'][n+1] }" ng-click="btnSelectHotel({{n+1}})">
+          <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+            <ion-slide>
+              <div class="hotel">
+                <div class="topDetails">
+                  <p class="hearts">
+                  <i class="icon ion-ios7-heart"></i>
+                  </p>
+                  £{{ hotel.price }} per person
+                </div>
+                <p class="hotelname">{{ hotel.name }}</p>
               </div>
-              <p class="hotelname">{{ hotel.name }}</p>
-            </div>
-            <div class="events">
-              <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div class="hotelInfo">
-              more stuff!
-            </div>
-          </ion-slide>
-        </ion-slide-box>
+              <div class="events">
+                <p>There is a Santana <b>music</b> concert 0.45 miles away!</p>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="hotelInfo">
+                more stuff!
+              </div>
+            </ion-slide>
+          </ion-slide-box>
+        </div>
       </div>
     </div>
 
 
 
   </div>
-<!--     <div class="bottomBox" ng-show="nexts">swipe up to create package</div>
- -->
+  <div class="bottomBox" ng-show="next">swipe up to select flights</div>
+
 
   </div>
 </div>

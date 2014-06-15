@@ -2,6 +2,18 @@ angular.module('starter.controllers')
 
 .controller('BookHotelCtrl', function($scope, Holiday, PN, $state) {
 
+  PN.sub(function (m) {
+    if (m.page == 'chooseHotel') {
+      if (m.action == 'selectHotel') selectHotel(m.val);
+      if (m.action == 'goToFlights') {
+        if (Holiday.hotel() == '') selectHotel(m.val);
+        goToFlights();
+      }
+    }
+  });
+
+
+
   $scope.hotels = [
     {
       'name':   'Hotel Habbo',
@@ -9,7 +21,7 @@ angular.module('starter.controllers')
       'rating': 3
     },
     {
-      'name':   'Marks Hotel',
+      'name':   'Mark\'s Hotel',
       'price':  400,
       'rating': 1
     },
@@ -33,7 +45,7 @@ angular.module('starter.controllers')
       'curr' : 2,
       '1': false,
       '2': true,
-      '2': false
+      '3': false
     },
     'hc3' : {
       'curr' : 3,
@@ -43,21 +55,40 @@ angular.module('starter.controllers')
     }
   };
 
+  var selectHotel = function (hotel) {
+    Holiday.setHotel(hotel);
+    $scope.next = true;
+    $scope.$apply();
+  };
+
+  var goToFlights = function () {
+    $state.go('chooseFlights');
+  }
+
+  $scope.btnSelectHotel = function (n) {
+    PN.pub('chooseHotel', 'selectHotel', n);
+    selectHotel(n);
+  };
+
+  $scope.btnGoToBudget = function () {
+    PN.pub('chooseHotel', 'goToFlights', Holiday.hotel());
+    goToFlights();
+  };
+
   $scope.doSwipe = function(direction, which) {
     alert('which: ' + which + ', direction: ' + direction);
-    var newnum = 0;
-    if (direction == 'up') {
-       newnum = $scope.sliders[which].curr - 1;
-      if (newnum == 0) newnum = numHotels;
-      alert('nn: ' + newnum);
-    }
-    for (i = 0; i < numHotels; i++) {
-      $scope.sliders[which][i+1] = false;
-    }
-    $scope.sliders[which][newnum] = true;
-    alert(JSON.stringify($scope.sliders[which]));
-    $scope.sliders[which].curr = newnum;
-    $scope.$apply();
+    // var newnum = 0;
+    // if (direction == 'up') {
+    //    newnum = $scope.sliders[which].curr - 1;
+    //   if (newnum == 0) newnum = numHotels;
+    //   alert('nn: ' + newnum);
+    // }
+    // for (i = 0; i < numHotels; i++) {
+    //   $scope.sliders[which][i+1] = false;
+    // }
+    // $scope.sliders[which][newnum] = true;
+    // $scope.sliders[which].curr = newnum;
+    // $scope.$apply();
   };
 
 }).directive('detectGesturesHotel', function($ionicGesture) {

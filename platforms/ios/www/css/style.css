@@ -326,25 +326,25 @@ html, body {
   height: 172px;
 }
 
-.hotelContainer .hotelInfo {
+.hotelInfo {
   background: #16a59b;
   height: 172px;
 }
 
-.hotelContainer .hotel {
+.hotel {
   background: #202323;
   height: 136px;
   position: relative;
 }
 
-.hotelContainer .hotel .hotelname {
+.hotel .hotelname {
   position: absolute;
   bottom: 4px;
   left: 6px;
   font-size: 25px;
 }
 
-.hotelContainer .hotel .topDetails {
+.hotel .topDetails {
   width: 100%;
   position: absolute;
   top: 4px;
@@ -353,23 +353,22 @@ html, body {
   text-align: right;
 }
 
-.hotelContainer .hotel .topDetails p.hearts {
+.hotel .topDetails p.hearts {
   margin-bottom: -3px;
 }
 
-.hotelContainer .hotel .topDetails p.price {
+.hotel .topDetails p.price {
 
 }
 
-.hotelContainer .hotel .price {
+.hotel .price {
   position: absolute;
   top: 4px;
   right: 6px;
   font-size: 22px;
 }
 
-
-.hotelContainer .events {
+.events {
   background: #16a59b;
   height: 36px;
   font-size: 16px;
@@ -377,9 +376,13 @@ html, body {
   position: relative;
 }
 
-.hotelContainer .events p {
+.events p {
   font-size: 12px;
   right: 6px;
   color: #fff; 
   position: absolute;
+}
+
+.hide {
+  display: none;
 }
