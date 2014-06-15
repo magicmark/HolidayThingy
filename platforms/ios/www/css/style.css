@@ -23,6 +23,7 @@ html, body {
 .container {
   width:320px;
   height:568px;
+  position: relative;
   overflow: hidden;
 }
 
@@ -311,5 +312,75 @@ html, body {
 
 .selected {
   background: #16a59b;
+}
+
+
+
+/*//
+// =======
+// Hotel
+// =======
+*/
+
+.hotelContainer {
+  height: 172px;
+}
+
+.hotelContainer .hotelInfo {
+  background: #16a59b;
+  height: 172px;
+}
+
+.hotelContainer .hotel {
+  background: #202323;
+  height: 136px;
+  position: relative;
+}
+
+.hotelContainer .hotel .hotelname {
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  font-size: 25px;
+}
+
+.hotelContainer .hotel .topDetails {
+  width: 100%;
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 19px;
+  text-align: right;
+}
+
+.hotelContainer .hotel .topDetails p.hearts {
+  margin-bottom: -3px;
+}
+
+.hotelContainer .hotel .topDetails p.price {
 
 }
+
+.hotelContainer .hotel .price {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 22px;
+}
+
+
+.hotelContainer .events {
+  background: #16a59b;
+  height: 36px;
+  font-size: 16px;
+  line-height: 36px;
+  position: relative;
+}
+
+.hotelContainer .events p {
+  font-size: 12px;
+  right: 6px;
+  color: #fff; 
+  position: absolute;
+}
+
