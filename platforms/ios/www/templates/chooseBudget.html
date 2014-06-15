@@ -2,20 +2,35 @@
   <div class="topBox">
      how much do you want to spend?
   </div>
-  <div style="width:100%;height:60px;" 
-       detect-gestures 
-       ng-transclude
-       gesture-type="swipeleft">
-   {{ currency }}
+  <div id="currentCurrency" style="width:100%;height:60px;" 
+       detect-gestures>
   </div>  
-	<div id="minValueWrapper">
-	 {{ minValue }}
+	<div id="minValueWrapper" 
+	     class="valuesWrapper">
+	  <span>
+			from
+		</span>
+	  <span class="value">
+		 {{ minValue }}
+	  </span>
+	  <span>
+			{{ currency }}
+	  </span>
 	</div>
 	<div id="valueSliderWrapper">
 		
 	</div>
-	<div id="maxValueWrapper">
-		{{ maxValue }}
+	<div id="maxValueWrapper"
+			 class="valuesWrapper">
+	  <span>
+			from
+		</span>
+	  <span class="value">
+		 {{ maxValue }}
+	  </span>
+	  <span>
+			{{ currency }}
+	  </span>
 	</div>
   <div class="bottomBox">
 	  swipe up to selectDate

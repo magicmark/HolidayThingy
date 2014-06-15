@@ -11,18 +11,20 @@ angular.module('starter.controllers')
 		/*
 		 * This is bullshit!
 		 */
-		 
+
 		$scope.$watch('currency',
 			function(oldValues,newValues){
 				if(newValues == 'pounds' 
 					&& oldValues == 'bitcoins')
 				{
 					$scope.minValue /= exchangeRate;
+					$scope.maxValue /= exchangeRate;
 				}
 				else if(newValues == 'bitcoins' 
 					&& oldValues == 'pounds')
 				{
 					$scope.minValue *= exchangeRate;
+					$scope.maxValue *= exchangeRate;
 				}
 		});
 

@@ -14,6 +14,7 @@ html, body {
   height: inherit;
   background-size: cover;
   background: #383939;
+  position: relative;
 }
 
 .insidePadding
@@ -317,4 +318,38 @@ html, body {
 
 /*
  * Slider Stuff
- * /
+ */
+
+ #valueSliderWrapper
+ {
+  background: #16a59b;
+  width: 100%;
+  height: 55px;
+  padding: 0px 20px;
+ }
+
+ .valuesWrapper
+ {
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  background: #626a6a;
+ }
+.valuesWrapper > span
+{
+  display: block;
+}
+ .valuesWrapper > .value
+ {
+  font-size: 100px;
+  line-height: 100px;
+  font-weight: 400;
+ }
+
+ #currentCurrency
+ {
+  text-align: center;
+  line-height: 21px;
+  font-size: 21px;
+  padding-top: 10px;
+ }
