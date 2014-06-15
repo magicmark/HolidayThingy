@@ -5,8 +5,9 @@
     where do you want to go?
   </div>
   <div>
-    <div id="chooseCity">
+    <div class="scroller">
       <div class="city"
+        ng-class="{itemSelect: selectedCity == city.name" 
         ng-repeat="city in cities"
         ng-click="btnSelectCity(city.name)"
         style="background: url(img/city.jpg) no-repeat top left">

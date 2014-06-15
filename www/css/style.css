@@ -3,7 +3,10 @@
 html, body {
   width:320px;
   height:568px;
-  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+/*  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+*/ 
+  font-family: 'Helvetica Neue';
+  font-weight: 300;
   color: #fff;
 }
 
@@ -38,8 +41,8 @@ html, body {
   background: #16a59b;
   line-height: 32.5px;
   padding-left: 25px;
-  font-weight: 500;
-  letter-spacing: 1px;
+/*  font-weight: 500;
+*/  letter-spacing: 1px;
   font-size: 15.8px;
   color: #fff;
   width: 100%;
@@ -68,7 +71,7 @@ html, body {
 }
 
 
-#chooseCity {
+.scroller {
   max-height: 515px;
   overflow-y: scroll;
   padding-bottom: 46px;
@@ -396,5 +399,51 @@ html, body {
 //
 */
 
+.flight {
+   height: 155px;
+   width: 100%;
+   position: relative;
+}
+
+.flightrow {
+  margin-bottom: -12px;
+}
+
+.flightList {
+/*  padding-left: 15px;
+*/
+width: 100%;  
+  position: absolute;
+   top: 0px;
+}
+
+.flightCol {
+  text-align: right;
+  font-size: 18px;
+}
+
+.flightDate {
+  text-align: left;
+  font-size: 24px;
+}
+
+.flightprice {
+  text-align: right;
+  font-size: 33px;
+}
 
 
+.flightDetails {
+
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+
+/*=======*/
+
+
+.itemSelect {
+  colour: #16a59b;
+}

@@ -21,6 +21,8 @@ angular.module('starter.controllers')
     }
   });
 
+  $scope.selectedCity = Holiday.city();
+
   var selectCity = function (city) {
     Holiday.setCity(city);
     $scope.next = true;

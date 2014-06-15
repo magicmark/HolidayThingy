@@ -2,21 +2,36 @@
 <div class="container" id="flightsPage">
   <div class="topPad"></div>
   <div class="topBox">
-    where do you want to go?
+    how do you want to get there?
   </div>
   <div>
-   <!--  <div id="chooseFlights">
+   <div class="scroller">
       <div class="flight"
-        ng-repeat="flight in flights"
-        ng-click="btnSelectFlight(city.name)"
+        ng-repeat="(n, flight) in flights"
+        ng-click="btnSelectFlight(n)"
         style="background: url(img/city.jpg) no-repeat top left">
-        <p>{{ city.name }}</p>
+
+        <div class="flightList">
+          <div class="row flightrow" ng-repeat="stop in flight.stops">
+            <div class="col col-20 flightCol flighttime">{{ stop.time }}</div>
+            <div class="col col-80 flightCol">{{ stop.stop }}</div>
+          </div>
+        </div>
+
+
+        <div class="flightDetails">
+          <div class="row">
+            <div class="col col-40 flightDate">{{ flight.date }}</div>
+            <div class="col col-60 flightprice">GBP {{ flight.price }}</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="bottomBox" ng-click="btnGoToBudget()" ng-show="next">
-      swipe up to set budget
-    </div> -->
+    <div class="bottomBox" ng-click="btnGoToFinish()" ng-show="next">
+      swipe up to complete planning
+    </div>
 
   </div>
 </div>
