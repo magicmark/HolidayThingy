@@ -6,7 +6,11 @@ angular.module('starter.controllers')
 		$scope.maxValue = 2;
 		$scope.currency = "bitcoins";
 
-		var exchangeRate = 360;
+		xmlHTTP = new XMLHttpRequest();
+		xmlHTTP.open("GET", "http://blockchain.info/tobtc?value=1&currency=GBP", false);
+		xmlHTTP.send(null);
+		var gbpToBtc = xmlHTTP.responseText;
+		alert(gbpToBtc);
 
 		/*
 		 * This is bullshit!
@@ -17,12 +21,12 @@ angular.module('starter.controllers')
 				if(newValues == 'pounds' 
 					&& oldValues == 'bitcoins')
 				{
-					$scope.minValue /= exchangeRate;
+					$scope.minValue *= gbpToBtc;
 				}
 				else if(newValues == 'bitcoins' 
 					&& oldValues == 'pounds')
 				{
-					$scope.minValue *= exchangeRate;
+					$scope.minValue /= gbpToBtc;
 				}
 		});
 
