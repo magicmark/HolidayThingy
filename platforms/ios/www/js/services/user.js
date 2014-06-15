@@ -1,17 +1,18 @@
-angular.module('starter.services', [])
+angular.module('starter.services')
 
 .service('User', function () {
   
-  var isLoggedIn = false;
-  var data = {
-
-  }
+  var loggedIn = false;
+  var fbdata = null;
 
   return {
-    isLoggedIn: function () { return loggedIn; },
     logIn:      function (userData) { 
-      data = userData;
-    }
-  }
+      loggedIn = true;
+      fbdata   = userData;
+    },
+    isLoggedIn:  function() { return loggedIn; },
+    getUserData: function() { return fbdata; }
+
+  };
 
 });
